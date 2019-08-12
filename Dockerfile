@@ -1,11 +1,9 @@
-FROM alpine:3.10
+FROM alpine:edge
 
 ARG VERSION_GITCOMMIT=unknow
 ARG SEARX_GIT_VERSION=unknow
-
 ARG SEARX_GID=1000
 ARG SEARX_UID=1000
-
 ARG TIMESTAMP_SETTINGS=0
 ARG TIMESTAMP_UWSGI=0
 ARG LABEL_VCS_REF=
@@ -61,17 +59,3 @@ RUN su searx -c "/usr/bin/python3 -m compileall -q searx"; \
     fi
 
 ENTRYPOINT ["/sbin/tini","--","/usr/local/searx/dockerfiles/docker-entrypoint.sh"]
-
-# Keep this argument at the end since it change each time
-ARG LABEL_DATE=
-LABEL maintainer="searx <https://github.com/asciimoo/searx>" \
-      description="A privacy-respecting, hackable metasearch engine." \
-      version="${SEARX_GIT_VERSION}" \
-      org.label-schema.schema-version="1.0" \
-      org.label-schema.name="searx" \
-      org.label-schema.version="${SEARX_GIT_VERSION}" \
-      org.label-schema.url="${LABEL_VCS_URL}" \
-      org.label-schema.vcs-ref=${LABEL_VCS_REF} \
-      org.label-schema.vcs-url=${LABEL_VCS_URL} \
-      org.label-schema.build-date="${LABEL_DATE}" \
-      org.label-schema.usage="https://github.com/searx/searx-docker"
