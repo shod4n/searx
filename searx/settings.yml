@@ -503,6 +503,7 @@ engines:
   - name : photon
     engine : photon
     shortcut : ph
+    timeout : 10.0
     disabled: False
 
   - name : piratebay
