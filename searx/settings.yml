@@ -4,7 +4,7 @@ general:
 search:
     safe_search : 0
     autocomplete : "google"
-    language : "en-US"
+    language : "en"
     ban_time_on_fail : 5
     max_ban_time_on_fail : 120
 server:
@@ -18,7 +18,7 @@ ui:
     static_path : ""
     templates_path : ""
     default_theme : oscar
-    default_locale : ""
+    default_locale : "en"
     theme_args :
         oscar_style : logicodev
 outgoing:
