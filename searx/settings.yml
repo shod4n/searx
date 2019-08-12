@@ -1,12 +1,14 @@
 general:
     debug : False
     instance_name : "searx"
+
 search:
     safe_search : 0
     autocomplete : "google"
     language : "en"
-    ban_time_on_fail : 5
+    ban_time_on_fail : 20
     max_ban_time_on_fail : 120
+
 server:
     port : 8888
     bind_address : "127.0.0.1"
@@ -14,6 +16,7 @@ server:
     base_url : False
     image_proxy : False
     http_protocol_version : "1.1"
+
 ui:
     static_path : ""
     templates_path : ""
@@ -21,11 +24,13 @@ ui:
     default_locale : "en"
     theme_args :
         oscar_style : logicodev
+
 outgoing:
     request_timeout : 2.0
     useragent_suffix : ""
     pool_connections : 100
     pool_maxsize : 10
+
 engines:
   - name: apk mirror
     engine: apkmirror
@@ -64,6 +69,7 @@ engines:
     engine : wikipedia
     shortcut : wp
     base_url : 'https://{language}.wikipedia.org/'
+
 
   - name : bing
     engine : bing
@@ -141,7 +147,7 @@ engines:
     engine : duckduckgo_definitions
     shortcut : ddd
     weight : 2
-    disabled : True
+    disabled : False
 
   - name : digbt
     engine : digbt
@@ -172,17 +178,18 @@ engines:
     shortcut : wd
     timeout : 3.0
     weight : 2
+    disabled: False
 
   - name : duckduckgo
     engine : duckduckgo
     shortcut : ddg
-    disabled : True
+    disabled : False
 
   - name : duckduckgo images
     engine : duckduckgo_images
     shortcut : ddi
     timeout: 3.0
-    disabled : True
+    disabled : False
 
   - name : etymonline
     engine : xpath
@@ -213,12 +220,8 @@ engines:
   - name : flickr
     categories : images
     shortcut : fl
-# You can use the engine using the official stable API, but you need an API key
-# See : https://www.flickr.com/services/apps/create/
-#    engine : flickr
-#    api_key: 'apikey' # required!
-# Or you can use the html non-stable engine, activated by default
-    engine : flickr_noapi
+    engine : flickr
+    api_key: '9ffa1940f4b1f1ab07ff77ea32e872c5'
 
   - name : free software directory
     engine : mediawiki
@@ -228,7 +231,7 @@ engines:
     number_of_results : 5
     search_type : title
     timeout : 5.0
-    disabled : True
+    disabled : False
 
   - name : frinkiac
     engine : frinkiac
@@ -411,7 +414,7 @@ engines:
     content_xpath : .//a[@class="domain"]
     categories : it
     shortcut : lo
-    disabled: True
+    disabled: False
 
   - name : microsoft academic
     engine : microsoft_academic
@@ -478,6 +481,7 @@ engines:
   - name : openstreetmap
     engine : openstreetmap
     shortcut : osm
+    disabled: False
 
   - name : openrepos
     engine : xpath
@@ -499,7 +503,7 @@ engines:
   - name : photon
     engine : photon
     shortcut : ph
-    disabled: True
+    disabled: False
 
   - name : piratebay
     engine : piratebay
@@ -519,12 +523,13 @@ engines:
     engine : qwant
     shortcut : qw
     categories : general
-    disabled : True
+    disabled : False
 
   - name : qwant images
     engine : qwant
     shortcut : qwi
     categories : images
+    disabled : False
 
   - name : qwant news
     engine : qwant
@@ -536,6 +541,7 @@ engines:
     engine : qwant
     shortcut : qws
     categories : social media
+    disabled : False
 
   - name : reddit
     engine : reddit
@@ -557,6 +563,7 @@ engines:
   - name : stackoverflow
     engine : stackoverflow
     shortcut : st
+    disabled : False
 
   - name : searchcode doc
     engine : searchcode_doc
@@ -602,7 +609,7 @@ engines:
     engine : startpage
     shortcut : sp
     timeout : 6.0
-    disabled : True
+    disabled : False
 
   - name : tokyotoshokan
     engine : tokyotoshokan
@@ -620,16 +627,17 @@ engines:
   - name : twitter
     engine : twitter
     shortcut : tw
+    disabled : False
 
   - name : unsplash
     engine : unsplash
-    disabled: True
+    disabled: False
     shortcut : us
 
   - name : yahoo
     engine : yahoo
     shortcut : yh
-    disabled : True
+    disabled : False
 
   - name : yandex
     engine : yandex
@@ -658,7 +666,7 @@ engines:
   - name : vimeo
     engine : vimeo
     shortcut : vm
-    disabled: True
+    disabled: False
 
   - name : wolframalpha
     shortcut : wa
