@@ -205,7 +205,7 @@ engines:
   - name : faroo
     engine : faroo
     shortcut : fa
-    disabled : True
+    disabled : False
 
   - name : 1x
     engine : www1x
