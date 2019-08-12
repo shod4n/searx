@@ -31,7 +31,7 @@
     {% for engine in result.engines %}
         <span class="label label-default">{{ engine }}</span>
     {% endfor %}
-    <small>{{ result_link("https://web.archive.org/web/" + result.url, icon('link') }}</small>
+    <small>{{ result_link("https://web.archive.org/web/" + result.url, icon('link')) }}</small>
     {% if proxify %}
     <small>{{ result_link(proxify(result.url), icon('sort') + _('proxied'), "text-info") }}</small>
     {% endif %}
@@ -45,7 +45,7 @@
     {% for engine in result.engines %}
         <span class="label label-default">{{ engine }}</span>
     {% endfor %}
-    <small>{{ result_link("https://web.archive.org/web/" + result.url, icon('link') }}</small>
+    <small>{{ result_link("https://web.archive.org/web/" + result.url, icon('link')) }}</small>
     {% if proxify %}
     <small>{{ result_link(proxify(result.url), icon('sort') + _('proxied'), "text-info") }}</small>
     {% endif %}
