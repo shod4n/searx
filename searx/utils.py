@@ -422,15 +422,6 @@ def to_string(obj):
 
 
 def ecma_unescape(s):
-    """
-    python implementation of the unescape javascript function
-
-    https://www.ecma-international.org/ecma-262/6.0/#sec-unescape-string
-    https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/unescape
-    """
-    # s = unicode(s)
-    # "%u5409" becomes "吉"
     s = ecma_unescape4_re.sub(lambda e: unichr(int(e.group(1), 16)), s)
-    # "%20" becomes " ", "%F3" becomes "ó"
     s = ecma_unescape2_re.sub(lambda e: unichr(int(e.group(1), 16)), s)
     return s
