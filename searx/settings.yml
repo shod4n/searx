@@ -51,7 +51,7 @@ engines:
     content_xpath : //div[@class="TEXT-BLOCK"]/ul/li
     categories : general
     timeout : 7.0
-    disabled : True
+    disabled : False
     shortcut : ai
 
   - name : arxiv
@@ -69,7 +69,7 @@ engines:
     engine : wikipedia
     shortcut : wp
     base_url : 'https://{language}.wikipedia.org/'
-
+    disabled : False
 
   - name : bing
     engine : bing
@@ -158,7 +158,7 @@ engines:
   - name : digg
     engine : digg
     shortcut : dg
-    disabled: True
+    disabled: False
 
   - name : erowid
     engine : xpath
