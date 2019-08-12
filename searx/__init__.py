@@ -1,20 +1,3 @@
-'''
-searx is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-searx is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with searx. If not, see < http://www.gnu.org/licenses/ >.
-
-(C) 2013- by Adam Tauber, <asciimoo@gmail.com>
-'''
-
 import certifi
 import logging
 from os import environ
@@ -54,17 +37,6 @@ if not settings_path:
 with open(settings_path, 'r', encoding='utf-8') as settings_yaml:
     settings = safe_load(settings_yaml)
 
-'''
-enable debug if
-the environnement variable SEARX_DEBUG is 1 or true
-(whatever the value in settings.yml)
-or general.debug=True in settings.yml
-
-disable debug if
-the environnement variable SEARX_DEBUG is 0 or false
-(whatever the value in settings.yml)
-or general.debug=False in settings.yml
-'''
 searx_debug_env = environ.get('SEARX_DEBUG', '').lower()
 if searx_debug_env == 'true' or searx_debug_env == '1':
     searx_debug = True
@@ -80,8 +52,7 @@ else:
 
 logger = logging.getLogger('searx')
 logger.debug('read configuration from %s', settings_path)
-# Workaround for openssl versions <1.0.2
-# https://github.com/certifi/python-certifi/issues/26
+
 if OPENSSL_VERSION_INFO[0:3] < (1, 0, 2):
     if hasattr(certifi, 'old_where'):
         environ['REQUESTS_CA_BUNDLE'] = certifi.old_where()
