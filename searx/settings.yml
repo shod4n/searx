@@ -141,7 +141,7 @@ engines:
     engine : deviantart
     shortcut : da
     timeout: 3.0
-    disabled: True
+    disabled: False
 
   - name : ddg definitions
     engine : duckduckgo_definitions
@@ -638,7 +638,7 @@ engines:
   - name : yahoo
     engine : yahoo
     shortcut : yh
-    disabled : False
+    disabled : True
 
   - name : yandex
     engine : yandex
